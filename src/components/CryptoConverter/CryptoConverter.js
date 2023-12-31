@@ -31,7 +31,7 @@ const CryptoConverter = () => {
     };
 
     fetchData();
-  }, []);
+  }, [amount]);
 
   const handleSubmit = async () => {
     try {
