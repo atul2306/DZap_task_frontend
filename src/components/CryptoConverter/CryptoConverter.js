@@ -41,6 +41,7 @@ const CryptoConverter = () => {
         targetCurrency,
       });
       console.log({response});
+      setAmount()
       setConvertedAmount(response.data.convertedAmount);
     } catch (error) {
       window.alert(error?.response?.data?.error)
