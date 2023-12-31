@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiUrl = 'http://localhost:3001/api';
+const apiUrl = process.env.REACT_APP_API;
 
 const api = {
   getCryptocurrencies: () => axios.get(`${apiUrl}/cryptocurrencies`),
