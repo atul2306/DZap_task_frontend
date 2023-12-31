@@ -4,7 +4,16 @@ import ConversionResult from './ConversionResult';
 import api from "../../services/api"
 import "./CryptoConverter.css"
 
+
+/**
+ * Functional component representing a Crypto Converter application.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered component.
+ */
+
 const CryptoConverter = () => {
+  // State variables for managing component's state
   const [cryptocurrencies, setCryptocurrencies] = useState([]);
   const [supportedCurrencies, setSupportedCurrencies] = useState([]);
   const [sourceCrypto, setSourceCrypto] = useState('');
@@ -12,6 +21,10 @@ const CryptoConverter = () => {
   const [targetCurrency, setTargetCurrency] = useState('');
   const [convertedAmount, setConvertedAmount] = useState(null);
 
+
+  /**
+   * Fetches cryptocurrency and supported currency data from the API on component mount.
+   */
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -19,7 +32,7 @@ const CryptoConverter = () => {
           api.getCryptocurrencies(),
           api.getSupportedCurrencies(),
         ]);
-
+       // Set initial state based on API responses
         setCryptocurrencies(cryptoResponse.data);
         setSourceCrypto(cryptoResponse.data[0]?.id || '');
 
@@ -31,24 +44,31 @@ const CryptoConverter = () => {
     };
 
     fetchData();
-  }, [amount]);
+  }, []);
+
+  /**
+   * Handles form submission, converts currency, and updates the state with the result.
+   */
 
   const handleSubmit = async () => {
     try {
+      // Make API call to convert currency
       const response = await api.convertCurrency({
         sourceCrypto,
         amount,
         targetCurrency,
       });
-      console.log({response});
+      // Update state with the converted amount
       setAmount()
       setConvertedAmount(response.data.convertedAmount);
     } catch (error) {
+      // Display an alert with the error message
       window.alert(error?.response?.data?.error)
       console.error('Error converting currency:', error);
     }
   };
 
+  // Rendered JSX
   return (
     <div className='cryptoconverter'>
       <h1>Crypto Converter</h1>

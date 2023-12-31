@@ -1,6 +1,24 @@
 import React from 'react';
 import "./CryptoForm.css";
 
+/**
+ * Functional component representing a form for cryptocurrency conversion.
+ *
+ * @component
+ * @param {Object} props - The component's properties.
+ * @param {Array} props.cryptocurrencies - List of cryptocurrencies for the source dropdown.
+ * @param {string} props.sourceCrypto - Selected source cryptocurrency.
+ * @param {Function} props.setSourceCrypto - Function to set the source cryptocurrency.
+ * @param {number} props.amount - Amount to convert.
+ * @param {Function} props.setAmount - Function to set the conversion amount.
+ * @param {Array} props.supportedcurrencies - List of supported target currencies.
+ * @param {string} props.targetCurrency - Selected target currency.
+ * @param {Function} props.setTargetCurrency - Function to set the target currency.
+ * @param {Function} props.handleSubmit - Function to handle form submission.
+ * @returns {JSX.Element} The rendered component.
+ */
+
+
 const CryptoForm = ({
   cryptocurrencies,
   sourceCrypto,
