@@ -40,7 +40,7 @@ const CryptoConverter = () => {
         amount,
         targetCurrency,
       });
-
+      console.log({response});
       setConvertedAmount(response.data.convertedAmount);
     } catch (error) {
       console.error('Error converting currency:', error);
