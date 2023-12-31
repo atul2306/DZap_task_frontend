@@ -8,7 +8,7 @@ const CryptoConverter = () => {
   const [cryptocurrencies, setCryptocurrencies] = useState([]);
   const [supportedCurrencies, setSupportedCurrencies] = useState([]);
   const [sourceCrypto, setSourceCrypto] = useState('');
-  const [amount, setAmount] = useState(1);
+  const [amount, setAmount] = useState();
   const [targetCurrency, setTargetCurrency] = useState('');
   const [convertedAmount, setConvertedAmount] = useState(null);
 

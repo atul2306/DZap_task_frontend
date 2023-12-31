@@ -27,7 +27,7 @@ const CryptoForm = ({
         <br />
         <label>
           Amount:
-          <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} />
+          <input type="number" value={amount} placeholder='Enter Amount' onChange={(e) => setAmount(e.target.value)} />
         </label>
         <br />
         <label>
