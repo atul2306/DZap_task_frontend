@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./CryptoForm.css";
 
 /**
@@ -30,7 +30,8 @@ const CryptoForm = ({
   setTargetCurrency,
   handleSubmit,
 }) => {
-
+  
+  useEffect(()=>{},[amount])
 
   return (
     <form>
