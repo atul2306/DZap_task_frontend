@@ -31,10 +31,7 @@ const CryptoForm = ({
   handleSubmit,
 }) => {
 
-    useEffect(()=>{
 
-    },[amount])
-    
   return (
     <form>
         <label>
