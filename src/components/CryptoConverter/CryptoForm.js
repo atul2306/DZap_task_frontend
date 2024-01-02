@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./CryptoForm.css";
 
 /**
@@ -31,7 +31,10 @@ const CryptoForm = ({
   handleSubmit,
 }) => {
 
-  const [curramount , setcurrAmount ]= useState(amount)
+    useEffect(()=>{
+
+    },[amount])
+    
   return (
     <form>
         <label>
@@ -47,7 +50,7 @@ const CryptoForm = ({
         <br />
         <label>
           Amount:
-          <input type="number" value={curramount} placeholder='Enter Amount' onChange={(e) => setAmount(e.target.value)} />
+          <input type="number" value={amount} placeholder='Enter Amount' onChange={(e) => setAmount(e.target.value)} />
         </label>
         <br />
         <label>
